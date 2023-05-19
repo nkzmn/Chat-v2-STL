@@ -10,7 +10,7 @@ void Chat::showLoginMenu()
 {
 	_currentUser = nullptr;
 	char operation;
-	std::cout << "\033[32m\t\tChat 2.0 is run.\a\033[m";
+	std::cout << "\033[32m\t\tChat 3.0 (Ubuntu) is run.\a\033[m";
 	do
 	{
 		std::cout << "\033[33m\n(1)SignUp\t\033[32m(2)Login\t\033[31m(0)ShutDown\n\033[m";
@@ -44,7 +44,7 @@ void Chat::showLoginMenu()
 void Chat::showUserMenu()
 {
 	char operation;
-	std::cout << "\033[36m\Hi, \033[33m" << _currentUser->getUserName()<<".\033[0m\n";
+	std::cout << "\033[36m\nHi, \033[33m" << _currentUser->getUserName()<<".\033[0m\n";
 
 	while (_currentUser)
 	{
@@ -102,18 +102,23 @@ void Chat::showAllUsersName() const
 
 void Chat::singUp()
 {
-	std::string c;
+	//  std::string c;
 	std::string login, name, gender;
-	std::vector<std::string> password;
+	std::string password;
+	//  std::vector<std::string> password;
 	std::cout << "Login: ";
 	std::cin >> login;
 	std::cout << "Password: ";
+	std::cin >> password;
+	/*
 	while ((c = _getch()) != "\r")
 	{
 		password.push_back(c);
 		_putch('*');
 	}
-	std::cout << "\nName: ";
+	*/
+
+	std::cout << "Name: ";
 	std::cin >> name;
 	std::cout << "Gender:";
 	
@@ -145,20 +150,25 @@ void Chat::login()
 {
 	
 	std::string login;
-	std::vector <std::string> password;
+	std::string password;
+	//  std::vector <std::string> password;
 	char operation;
-	std::string Ò;
+	//  std::string —Å;
 	do
 	{
 		std::cout << "Login: ";
 		std::cin >> login;
 		_currentUser = getUserByLogin(login);
 		std::cout << "Password: ";
-		while ((Ò = _getch()) != "\r")
+		std::cin >> password;
+		/*
+		while ((—Å = _getch()) != "\r")
 		{
-			password.push_back(Ò);
+			password.push_back(—Å);
 			_putch('*');
 		}
+		*/
+
 		std::cout << "\n";
 		if (_currentUser == nullptr || (password != _currentUser->getUserPassword()))
 		{
@@ -262,4 +272,5 @@ std::shared_ptr<User> Chat::getUserByName(const std::string& name) const
 	}
 	return nullptr;
 }
+
 
