@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <conio.h>
+//  #include <conio.h>
+#include <memory>
 
 #include"Message.h"
 #include "User.h"
@@ -45,3 +46,4 @@ private:
 	std::shared_ptr<User> getUserByName(const std::string& name) const;
 
 };
+

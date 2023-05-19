@@ -6,9 +6,9 @@ int main()
 
 	Chat chat;
 
-	chat.startChat(); //переключает чат статус в true
+	chat.startChat(); //РїРµСЂРµРєР»СЋС‡Р°РµС‚ С‡Р°С‚ СЃС‚Р°С‚СѓСЃ РІ true
 
-	while (chat.isChatWork()) //пока чат статус = true
+	while (chat.isChatWork()) //РїРѕРєР° С‡Р°С‚ СЃС‚Р°С‚СѓСЃ = true
 	{
 		chat.showLoginMenu();
 		
