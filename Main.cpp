@@ -1,17 +1,18 @@
 #include "Chat.h"
 
+
+
 int main()
 {
 	setlocale (LC_ALL, "");
 
 	Chat chat;
 
-	chat.startChat(); //РїРµСЂРµРєР»СЋС‡Р°РµС‚ С‡Р°С‚ СЃС‚Р°С‚СѓСЃ РІ true
+	chat.startChat(); //переключает чат статус в true
 
-	while (chat.isChatWork()) //РїРѕРєР° С‡Р°С‚ СЃС‚Р°С‚СѓСЃ = true
+	while (chat.isChatWork()) //пока чат статус = true
 	{
 		chat.showLoginMenu();
-		
 		while (chat.getCurrentUser())
 		{
 			chat.showUserMenu();
